@@ -11,6 +11,11 @@ from aws_lambda_powertools.utilities.typing import LambdaContext
 from humps import camelize
 from pydantic import BaseModel
 from requests import Response
+import os
+import boto3
+
+sqs = boto3.client('sqs')
+QUEUE_URL = os.environ.get('QUEUE_URL')
 
 tracer = Tracer()
 logger = Logger()
@@ -59,6 +64,13 @@ def create_task():
         title=new_task.title,
         completed=new_task.completed,
     )
+
+    if QUEUE_URL:
+        logger.info(f"Sending task to SQS queue: {QUEUE_URL}")
+        sqs.send_message(
+            QueueUrl=QUEUE_URL,
+            MessageBody=task.json(),
+        )
 
     return task.dict()
 

@@ -1,0 +1,29 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/aws-lambda": "^8.10.110",
+    "@types/node": "^18.14.0",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "sst": "^2.0.27",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.5",
+    "vitest": "^0.28.5"
+  },
+  "dependencies": {
+    "@aws-lambda-powertools/logger": "^1.5.1",
+    "@aws-lambda-powertools/metrics": "^1.5.1",
+    "@aws-lambda-powertools/tracer": "^1.5.1",
+    "sst": "^2.0.27"
+  }
+}
