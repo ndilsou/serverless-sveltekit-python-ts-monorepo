@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get install -y curl
 
 ENV AWS_LAMBDA_RIE_URL=https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie
-RUN curl -o /usr/local/bin/aws-lambda-rie $AWS_LAMBDA_RIE_URL
+RUN curl -Lo /usr/local/bin/aws-lambda-rie $AWS_LAMBDA_RIE_URL
 RUN chmod +x /usr/local/bin/aws-lambda-rie
 
 FROM python:3.11.2-slim-bullseye as build-image
