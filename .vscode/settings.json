@@ -1,0 +1,8 @@
+{
+  "search.exclude": {
+    "**/.sst": true
+  },
+"python.analysis.extraPaths": [
+  "components", "bases"
+]
+}

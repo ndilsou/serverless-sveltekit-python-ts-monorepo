@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "serverless-sveltekit-python-ts-monorepo"
+version = "0.1.0"
+description = ""
+authors = ["ndilsou <nasoungadoy@gmail.com>"]
+readme = "README.md"
+packages = [
+        {include = "mono/apigw", from = "bases"},
+    ]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+boto3 = "^1.26.74"
+aws-lambda-powertools = {extras = ["parser"], version = "^2.8.0"}
+structlog = "^22.3.0"
+requests = "^2.28.2"
+pyhumps = "^3.8.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+pyright = "^1.1.294"
+ruff = "^0.0.247"
+typing-extensions = "^4.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
