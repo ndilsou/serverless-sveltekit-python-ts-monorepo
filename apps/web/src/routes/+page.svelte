@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import ProseMirrorEditor from './ProseMirrorEditor.svelte';
+	import TiptapEditor from './TiptapEditor.svelte';
+</script>
+
+<div class="w-screen min-h-screen flex flex-col gap-0.5 justify-center items-center bg-neutral">
+	<ProseMirrorEditor />
+	<TiptapEditor />
+</div>
